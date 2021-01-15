@@ -23,6 +23,11 @@ console.log(3=='3')
 console.log(3 != '3') */
 let userData = [2444]
 
+
+casa(2, 3));
+
+
+/* 
 fetch('./data.json')
     .then(respuesta => respuesta.json())
     .then(usu => {
@@ -31,4 +36,10 @@ fetch('./data.json')
         console.log(userData)
     })
 
-console.log(userData)
+console.log(userData) */
+
+
+function casa(a, b) {
+    return a + b
+}
+

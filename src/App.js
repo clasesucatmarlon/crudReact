@@ -48,6 +48,7 @@ function App() {
   const deleteUser = (id) => {
     // console.log(id)
     setUsers(users.filter(user => user.id !== id))
+    // reduce 
   }
 
 
