@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserTable from './components/UserTable';
 import { v4 as uuidv4 } from 'uuid';
 import AddUserForm from './components/AddUserForm';
@@ -15,7 +15,23 @@ function App() {
     { id: uuidv4(), name: 'Carlos Herrera', username: 'carlosherrera' },
   ]
 
+  /*   function leerJson() {
+      const [userData, setuserData] = useState([])
+  
+      useEffect( () => {
+        fetch('./data.json')
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+          setuserData(datos)
+        })
+      }, [])
+      return userData
+    }
+  
+    const userData = leerJson()
+   */
 
+   
   // State
   const [users, setUsers] = useState(userData);
 
@@ -65,8 +81,8 @@ function App() {
             editing ? (
               <div>
                 <h2>Edit user</h2>
-                <EditUserForm currentUser={currentUser} updateUser={updateUser}/>
-              
+                <EditUserForm currentUser={currentUser} updateUser={updateUser} />
+
               </div>
             ) : (
                 <div>
@@ -80,10 +96,10 @@ function App() {
         </div>
         <div className="flex-large">
           <h2>View users</h2>
-          <UserTable 
+          <UserTable
             users={users}
             deleteUser={deleteUser}
-            editRow={editRow}  
+            editRow={editRow}
           />
         </div>
       </div>

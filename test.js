@@ -17,7 +17,18 @@ document.body.innerHTML = `<h2>marlon: ${x}</h2>` */
 /* var a; var b= (a = 3) ? true : false */
 
 /* console.log(typeof(42)) */
-console.log([3] == [3])
+/* console.log([3] == [3])
 console.log(3==='3')
 console.log(3=='3')
-console.log(3 != '3')
+console.log(3 != '3') */
+let userData = [2444]
+
+fetch('./data.json')
+    .then(respuesta => respuesta.json())
+    .then(usu => {
+        let a = []
+        
+        console.log(userData)
+    })
+
+console.log(userData)
