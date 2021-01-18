@@ -4,21 +4,34 @@
 
 let boton = document.getElementById('boton');
 let contenedor = document.getElementById('contenedor');
-let posts = null;
+let users = null;
 
 boton.addEventListener('click', function () {
     fetch('./data.json')
         .then(datos => datos.json())
         .then(datos => {
-            posts = datos.data;
-            mostrarDatos(posts)
+            users = datos.data;
+            mostrarDatos(users)
         })
 })
 
-function mostrarDatos(posts) {
-    console.log(posts)
-    posts.map((item, i) => {
-        console.log(item)
+function mostrarDatos(users) {
+    //console.log(users)
+    users.map((item, i) => {
+        /*      let name = document.querySelector('.name')
+                let userName = document.querySelector('.userName')
+                name.innerHTML = item.name;
+                userName.innerHTML = item.username; */
+
+        let name = document.createElement('h1');
+        let userName = document.createElement('h3');
+        
+        name.innerHTML = item.name;
+        userName.innerHTML = item.username;
+        
+        contenedor.appendChild(name);
+        contenedor.appendChild(userName);
+
     })
-    
+
 }
